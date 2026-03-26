@@ -4,7 +4,6 @@
 
 To create an **abstract class** named `Shape` with an **abstract method** `calculate_area`, and implement this method in two subclasses: `Rectangle` and `Circle`.
 
----
 
 ## 🧠 ALGORITHM
 
@@ -26,10 +25,46 @@ To create an **abstract class** named `Shape` with an **abstract method** `calcu
    - Instantiate `Rectangle` and `Circle`.
    - Call their `calculate_area()` methods.
 
----
 
 ## 💻 Program
+~~~
+
+from abc import ABC, abstractmethod
+import math
+
+
+class Shape(ABC):
+    @abstractmethod
+    def calculate_area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, length, breadth):
+        self.length = length
+        self.breadth = breadth
+    
+    def calculate_area(self):
+        return self.length * self.breadth
+
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def calculate_area(self):
+        return math.pi * self.radius * self.radius
+rect = Rectangle(10, 5)
+circle = Circle(7)
+
+print("Area of Rectangle:", rect.calculate_area())
+print("Area of Circle:", circle.calculate_area())
+~~~
 
 ## Output
+Area of Rectangle: 50
+
+Area of Circle: 153.93804002589985
+
 
 ## Result
+The program successfully demonstrates abstract classes and methods in Python. The abstract class Shape defines the method calculate_area, which is implemented differently in the subclasses Rectangle and Circle. This shows how abstraction enforces a common interface while allowing specific implementations.
