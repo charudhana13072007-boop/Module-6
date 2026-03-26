@@ -4,7 +4,7 @@
 
 To create two specific classes — `Beans` and `Mango`. Then, create a **generic function** that can accept any object and determine its **type** (Fruit or Vegetable) and **color**, using polymorphism.
 
----
+
 
 ## 🧠 ALGORITHM
 
@@ -23,10 +23,46 @@ To create two specific classes — `Beans` and `Mango`. Then, create a **generic
    - Instantiate `Beans` and `Mango`.
    - Pass them to `func()` and execute the program.
 
----
+
 
 ## 💻 Program
+~~~
 
+
+class Beans:
+    def type(self):
+        print("Vegetable")
+    def color(self):
+        print("Green")
+class Mango:
+    def type(self):
+        print("Fruit")
+    def color(self):
+        print("Yellow")
+
+
+def func(obj):
+    obj.type()
+    obj.color()
+
+b = Beans()
+m = Mango()
+
+print("Beans object:")
+func(b)
+
+print("\nMango object:")
+func(m)
+~~~
 ## Output
+Beans object:
+Vegetable
+Green
+
+Mango object:
+Fruit
+Yellow
+
 
 ## Result
+The program successfully demonstrates polymorphism in Python. The generic function func(obj) works with both Beans and Mango objects, calling their respective type() and color() methods. This shows how different classes can share method names but produce different outputs, illustrating polymorphism in action.
